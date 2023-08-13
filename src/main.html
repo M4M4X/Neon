@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Control</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="./img/logo.jpg">
+</head>
+<body>
+    <header>
+        <div>
+            <a href=""><img src="./img/titleWhite.png" alt=""></a><br>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">LIGHTS</a></li>
+                <li><a href="">TIMER</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <div class="page1">
+        <div class="neonControl">
+            <h1>NEON</h1>
+            <h2>CONTROL</h2>
+        </div>
+        <div class="luminosity">
+            <h3>LUMINOSITY</h3>
+            <div id="number" class="neonTextWhite">50</div>
+            <input type="range" min="0" max="100" value="50" step="1" id="slider">
+        </div>
+    </div>
+    <div class="page2">
+        page 2
+    </div>
+    <div class="page3">
+        page 3
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        var slider = document.getElementById("slider");
+        var number = document.getElementById("number");
+        slider.oninput=function(){number.innerHTML = slider.value;}
+    </script>
+</body>
+</html>
