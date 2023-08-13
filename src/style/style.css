@@ -22,6 +22,7 @@
     font-family: Tahoma, sans-serif;
     color: white;
     transition: all 0.2s ease;
+    scroll-behavior: smooth;
 }
 body {
     
@@ -46,7 +47,7 @@ body {
         0 0 21px #fff,
         0 0 42px #fff,
         0 0 82px #fff,
-        0 0 92px #000,
+        0 0 92px #fff,
         0 0 102px #000,
         0 0 151px #000;
 }.neonTextPink {
@@ -166,56 +167,55 @@ nav { /* NAVBAR BOX */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     /* padding-left: 15%; */
 }.page1 .neonControl {
     /* width: 100%; */
     display: flex;
     align-items: center;
     /* border: 1px solid black; */
-
 }.page1 h1 {
-    font-size: 250px;
+    font-size: 1580%;
     /* border: 1px solid black; */
     word-break: break-all;
     text-align: center;
     letter-spacing: 5px;
     display: inline-block;
     line-height: 200px;
-    width: 400px;
+    width: 50%;
 }.page1 h2 {
-    font-size: 60px;
+    font-size: 380%;
     letter-spacing: 16px;
     /* text-align: center; */
     display: inline;
     writing-mode: vertical-lr;
-    padding-top: 25px;
+    padding-top: 3%;
     /* text-align: ; */
     /* border: 1px solid black; */
 }.page1 h3 {
-    font-size: 40px;
+    font-size: 260%;
     letter-spacing: 16px;
     /* text-align: center; */
     display: inline;
     writing-mode: vertical-lr;
-    padding-top: 25px;
+    padding-top: 50px;
     /* text-align: ; */
     /* border: 1px solid black; */
 }.page1 .luminosity {
     /* padding-left: 300px; */
-    margin-left: 200px;
+    /* margin-left: 200px; */
     display: inline;
     width: 200px;
     /* border: 1px solid black; */
 }#number {
     width: 50px;
     /* border: 1px solid black; */
-    font-size: 20px;
-    transform: translate(65px, -40px);
+    font-size: 150%;
+    transform: translate(130%, -140%);
     text-align: center;
 }input[type="range"]{
-    width: 380px;
-    transform: translate(-100px,-278px) rotate(-90deg);
+    width: 190%;
+    transform: translate(-26.5%,-9600%) rotate(-90deg);
     height: 3px;
     border-radius: 100px;
 }
