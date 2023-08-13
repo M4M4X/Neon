@@ -161,6 +161,7 @@ nav { /* NAVBAR BOX */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }.page1 .neonControl {
     display: flex;
     align-items: center;
