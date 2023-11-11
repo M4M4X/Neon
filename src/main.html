@@ -24,26 +24,47 @@
             </ul>
         </nav>
     </header>
+
+
+
     <div class="page1" id="home">
         <div class="neonControl">
             <h1>NEON</h1>
             <h2>CONTROL</h2>
         </div>
         <div class="luminosity">
-            <h3>LUMINOSITY</h3>
+            <h2>LUMINOSITY</h2>
             <div>
                 <input type="range" min="0" max="100" value="50" step="1" id="slider">
                 <div id="number" class="neonTextWhite">50</div>
             </div>
         </div>
     </div>
+
+
+
     <div class="page2" id="lights">
-        page 2
+        <div>
+            reste ici
+        </div>
+        <h2>Lights</h2>
     </div>
-    <div class="transition">TIMER</div>
+
+
+
+    <div class="transition"></div>
+
+
+
     <div class="page3" id="timer">
-        page 3
+        <div class="timer">
+            reste ici
+        </div>
+        <h2>Timer</h2>
     </div>
+
+
+
     <footer>
         <h3>Website developed by Max & flo</h3>
         <p>Neon Control - v1</p>
@@ -60,8 +81,6 @@
             if (currentScrollPos > (Math.round(window.innerHeight)*0.85)) {
                 document.getElementById("header").style.transition = "all 0.5s ease";
                 document.getElementById("header").style.backgroundColor = "rgba(0, 0, 0, 0.95)";
-                // document.getElementById("header").style.backgroundColor = "rgba(36, 16, 88, 0.95)";
-                // document.getElementById("header").style.borderRadius = "0 0 25px 25px";
             } else {
                 document.getElementById("header").style.transition = "all 0.5s ease";
                 document.getElementById("header").style.backgroundColor = "rgba(36, 16, 88, 0)";
