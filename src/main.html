@@ -12,7 +12,7 @@
         <div>
             <a href="#home"><img src="./img/titleWhite.png" alt="Max & Flo"></a>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="switch_on_off" onclick="checkbox_function()">
                 <span class="slider round"></span>
             </label>
         </div>
@@ -44,10 +44,38 @@
 
 
     <div class="page2" id="lights">
-        <div>
-            reste ici
-        </div>
         <h2>Lights</h2>
+        <div id="colors_and_animations">
+            <div id="colors">
+                <h3>COLORS</h3><br><br>
+                <div id="colors_choices">
+                    <button type="button" id="b-red"></button>
+                    <button type="button" id="b-orange"></button>
+                    <button type="button" id="b-yellow"></button>
+                    <button type="button" id="b-green"></button>
+                    <button type="button" id="b-cyan"></button>
+                    <button type="button" id="b-blue"></button>
+                    <button type="button" id="b-pink"></button>
+                    <button type="button" id="b-purple"></button>
+                    <button type="button" id="b-white"></button>
+                    <button type="button" id="b-white"></button>
+                    <button type="button" id="b-white"></button>
+                    <button type="button" id="b-white"></button>
+                    <button type="button" id="b-red"></button>
+                </div>
+            </div>
+            <div id="animations">
+                <h3>FLOWS</h3><br><br>
+                <div id="animations_choices">
+                    <button type="button" id="nom_du_flow">test</button>
+                    <button type="button" id="nom_du_flow">test</button>
+                    <button type="button" id="nom_du_flow">test</button>
+                    <button type="button" id="nom_du_flow">test</button>
+                    <button type="button" id="nom_du_flow">test</button>
+                    <button type="button" id="nom_du_flow">test</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -57,10 +85,10 @@
 
 
     <div class="page3" id="timer">
-        <div class="timer">
+        <h2>Timer</h2>
+        <div>
             reste ici
         </div>
-        <h2>Timer</h2>
     </div>
 
 
@@ -86,6 +114,18 @@
                 document.getElementById("header").style.backgroundColor = "rgba(36, 16, 88, 0)";
             }
         });
+
+        function checkbox_function () {
+            if (event.target.checked) {
+                slider.style.pointerEvents = "auto";
+                slider.disabled = false;
+            } else {
+                slider.style.pointerEvents = "none";
+                slider.disabled = true;
+            }
+        }
+
+
     </script>
 </body>
 </html>
