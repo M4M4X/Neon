@@ -313,28 +313,42 @@ nav { /* NAVBAR BOX */
 }
 #b-red {
     background-color: var(--red);
+    color: transparent;
 }
 #b-orange {
     background-color: var(--orange);
+    color: transparent;
 }
 #b-yellow {
     background-color: var(--yellow);
+    color: transparent;
 }
 #b-green {
     background-color: var(--green);
+    color: transparent;
 }
 #b-cyan {
     background-color: var(--cyan);
+    color: transparent;
 }
 #b-blue {
     background-color: var(--blue);
+    color: transparent;
 }
 #b-pink {
     background-color: var(--pink);
+    color: transparent;
 }
 #b-purple {
     background-color: var(--purple);
+    color: transparent;
 }
+
+#b-white {
+    background-color: var(--white);
+    color: transparent;
+}
+
 #animations {
     /* border: 2px solid rgb(23, 23, 200); */
     display: flex;

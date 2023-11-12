@@ -32,7 +32,7 @@
         <div class="luminosity">
             <h2>LUMINOSITY</h2>
             <div>
-                <input type="range" min="1" max="100" value='%d' step="1" id="brightness">
+                <input type="range" onclick='setBrightness()' min="1" max="100" value='%d' step="1" id="brightness">
                 <div id="number" class="neonTextWhite">50</div>
             </div>
         </div>
@@ -43,19 +43,19 @@
             <div id="colors">
                 <h3>COLORS</h3><br><br>
                 <div id="colors_choices">
-                    <button type="button" id="b-red"></button>
-                    <button type="button" id="b-orange"></button>
-                    <button type="button" id="b-yellow"></button>
-                    <button type="button" id="b-green"></button>
-                    <button type="button" id="b-cyan"></button>
-                    <button type="button" id="b-blue"></button>
-                    <button type="button" id="b-pink"></button>
-                    <button type="button" id="b-purple"></button>
-                    <button type="button" id="b-white"></button>
-                    <button type="button" id="b-white"></button>
-                    <button type="button" id="b-white"></button>
-                    <button type="button" id="b-white"></button>
-                    <button><input type="color" value="#000000" id="color-picker"></button>
+                    <button><input type="button" value="#F43545" onclick="updateColor_red()" id="b-red"></button>
+                    <button><input type="button" value="#FF8901" onclick="updateColor_orange()" id="b-orange"></button>
+                    <button><input type="button" value="#FAD717" onclick="updateColor_yellow()" id="b-yellow"></button>
+                    <button><input type="button" value="#00BA71" onclick="updateColor_green()" id="b-green"></button>
+                    <button><input type="button" value="#00C2DE" onclick="updateColor_cyan()" id="b-cyan"></button>
+                    <button><input type="button" value="#005ec9" onclick="updateColor_blue()" id="b-blue"></button>
+                    <button><input type="button" value="#ff3ae1" onclick="updateColor_pink()" id="b-pink"></button>
+                    <button><input type="button" value="#71129c" onclick="updateColor_purple()" id="b-purple"></button>
+                    <button><input type="button" value="#fff" onclick="updateColor_white()" id="b-white"></button>
+                    <button><input type="button" value="#fff" onclick="updateColor_white()" id="b-white"></button>
+                    <button><input type="button" value="#fff" onclick="updateColor_white()" id="b-white"></button>
+                    <button><input type="button" value="#fff" onclick="updateColor_white()" id="b-white"></button>
+                    <button><input type="color" value="#000000" id="color-picker" onchange="updateColor()"></button>
                 </div>
             </div>
             <div id="animations">
@@ -109,6 +109,137 @@
                 slider.disabled = true;
             }
         }
+
+        function updateColor() {
+            var color = document.getElementById("color-picker").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+
+        function updateColor_red() {
+            var color = document.getElementById("b-red").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_orange() {
+            var color = document.getElementById("b-orange").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_yellow() {
+            var color = document.getElementById("b-yellow").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_green() {
+            var color = document.getElementById("b-green").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_cyan() {
+            var color = document.getElementById("b-cyan").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_blue() {
+            var color = document.getElementById("b-blue").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_pink() {
+            var color = document.getElementById("b-pink").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_purple() {
+            var color = document.getElementById("b-purple").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        function updateColor_white() {
+            var color = document.getElementById("b-white").value;
+            var red = parseInt(color.substr(1, 2), 16);
+            var green = parseInt(color.substr(3, 2), 16);
+            var blue = parseInt(color.substr(5, 2), 16);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/color?r=" + red + "&g=" + green + "&b=" + blue, true);
+            xhr.send();
+        }
+
+        
+
+        function setBrightness(){
+          var brightness = document.getElementById('brightness').value;
+          var xhr = new XMLHttpRequest();
+
+          //brightness = brightness * 2.55;
+          //2.48*x + 7.52;
+          brightness = Math.round(2.48 * brightness + 7.52);
+
+          xhr.open("GET", '/brightness?brightness=' + brightness, true);
+          xhr.send();
+        }
+
+        const switchElement = document.getElementById("switch_on_off");
+        var switchState = 0;
+
+        switchElement.addEventListener("change",function(){
+            if(this.checked){
+                switchState = 1;
+            }else{
+                switchState = 0;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", '/switchState?switchState=' + switchState, true);
+            xhr.send();
+
+        });
 
     </script>
 </body>
