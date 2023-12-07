@@ -41,26 +41,26 @@
   .clock-day{
     color: white; 
     font-size: 5rem; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
   }
   .clock-hours{
     color: white; 
     font-size: 5rem; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
   }
   .clock-minutes{
     color: white; 
     font-size: 5rem; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
   }
   .clock-seconds{
     color: white; 
     font-size: 5rem; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
   }
 
   

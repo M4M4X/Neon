@@ -216,7 +216,7 @@ nav { /* NAVBAR BOX */
 }input[type="range"]{
     -webkit-appearance: slider-vertical;
     height: 350px;
-    width: 0.1px;
+    width: 5px;
     /* border: 2px solid rgb(200, 23, 23); */
 }
 
