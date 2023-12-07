@@ -37,6 +37,33 @@
     min-width: 90px;
     position: relative;
   }
+
+  .clock-day{
+    color: white; 
+    font-size: 5rem; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+  .clock-hours{
+    color: white; 
+    font-size: 5rem; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+  .clock-minutes{
+    color: white; 
+    font-size: 5rem; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+  .clock-seconds{
+    color: white; 
+    font-size: 5rem; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+
+  
   
   .clock-col:not(:last-child):before,
   .clock-col:not(:last-child):after {
