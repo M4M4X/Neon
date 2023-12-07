@@ -483,7 +483,8 @@ footer {
     background-size: cover;*/
 
 
-    border-radius: 10px;
+    /*border-radius: 20px;*/
+    border-radius: var(--button_radius);
     padding: 60px 20px;
     /*box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);*/
     box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.5);
@@ -565,9 +566,10 @@ footer {
     color: #ffffff; /* Choisir une couleur de texte */
     border: 2px solid #000000; /* Choisir une couleur de bordure */
     padding: 10px 20px; /* Ajuster le rembourrage pour la taille du bouton */
-    font-size: 1.5rem; /* Ajuster la taille de la police */
-    border-radius: 5px; /* Rayon de la bordure pour les coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre optionnelle pour la profondeur */
+    font-size: 2rem; /* Ajuster la taille de la police */
+    /*border-radius: 5px; /* Rayon de la bordure pour les coins arrondis */
+    border-radius: var(--button_radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre optionnelle pour la profondeur */
     cursor: pointer; /* Curseur de pointeur pour indiquer la fonctionnalité cliquable */
     transition: background-color 0.3s, color 0.3s; /* Transition pour les interactions hover et click */
 }
