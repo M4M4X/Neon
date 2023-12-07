@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isLongPress = true;
             resetTimerDisplay();
             stopCountdown();
+            document.getElementById('stop-timer').style.display = 'none';
         }, 1000); // Durée d'appui long (1 seconde)
     });
 
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function stopCountdown() {
         clearInterval(timerInterval);
         setEditable(true);
-        document.getElementById('stop-timer').style.display = 'none';
+        /*document.getElementById('stop-timer').style.display = 'none';*/
     }
 
     function resetTimerDisplay() {
