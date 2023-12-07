@@ -2,6 +2,8 @@ let timerInterval; // Variable pour l'intervalle du compte à rebours
 let longPressTimer; // Timer pour détecter un appui long
 let isLongPress = false; // Flag pour identifier un appui long
 
+document.getElementById('stop-timer').style.display = 'none';
+
 document.addEventListener('DOMContentLoaded', function () {
     const startButton = document.getElementById('start-timer');
     const stopButton = document.getElementById('stop-timer');
