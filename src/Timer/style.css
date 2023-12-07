@@ -1,72 +1,46 @@
 .clock-day:before {
     content: var(--timer-day);
-  }
-  .clock-hours:before {
+}
+.clock-hours:before {
     content: var(--timer-hours);
-  }
-  .clock-minutes:before {
+}
+.clock-minutes:before {
     content: var(--timer-minutes);
-  }
-  .clock-seconds:before {
+}
+.clock-seconds:before {
     content: var(--timer-seconds);
-  }
-  
-  body {
-    background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+}
+
+body {
+    /*background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);*/
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  .clock-container {
+}
+
+.clock-container {
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #080808;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 60px 20px;
     box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);
     display: flex;
-  }
-  
-  .clock-col {
+}
+
+.clock-col {
     text-align: center;
     margin-right: 40px;
     margin-left: 40px;
     min-width: 90px;
     position: relative;
-  }
+}
 
-  .clock-day{
-    color: white; 
-    font-size: 5rem; 
-    margin-top: 10px; 
-    margin-bottom: 10px;
-  }
-  .clock-hours{
-    color: white; 
-    font-size: 5rem; 
-    margin-top: 10px; 
-    margin-bottom: 10px;
-  }
-  .clock-minutes{
-    color: white; 
-    font-size: 5rem; 
-    margin-top: 10px; 
-    margin-bottom: 10px;
-  }
-  .clock-seconds{
-    color: white; 
-    font-size: 5rem; 
-    margin-top: 10px; 
-    margin-bottom: 10px;
-  }
-
-  
-  
-  .clock-col:not(:last-child):before,
-  .clock-col:not(:last-child):after {
+.clock-col:not(:last-child):before,
+.clock-col:not(:last-child):after {
     content: "";
     background-color: rgba(255, 255, 255, .3);
     height: 5px;
@@ -75,41 +49,76 @@
     display: block;
     position: absolute;
     right: -42px;
-  }
-  
-  .clock-col:not(:last-child):before {
+}
+
+.clock-col:not(:last-child):before {
     top: 35%;
-  }
-  
-  .clock-col:not(:last-child):after {
+}
+
+.clock-col:not(:last-child):after {
     top: 50%;
-  }
-  
-  .clock-timer:before {
-    color: #fff;
+}
+
+.clock-timer {
+    color: white;
+    font-size: 8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.clock-timer:before {
     font-size: 4.2rem;
     text-transform: uppercase;
-  }
-  
-  .clock-label {
+}
+
+.clock-label {
     color: rgba(255, 255, 255, .35);
     text-transform: uppercase;
     font-size: .7rem;
     margin-top: 10px;
-  }
-  
-  @media (max-width: 825px) {
+}
+
+@media (max-width: 825px) {
     .clock-container {
-      flex-direction: column;
-      padding-top: 40px;
-      padding-bottom: 40px;
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
     .clock-col + .clock-col {
-      margin-top: 20px;
+        margin-top: 20px;
     }
     .clock-col:before,
     .clock-col:after {
-      display: none !important;
+        display: none !important;
     }
-  }
-  
+}
+
+.button-container {
+    text-align: center;
+    width: 100%; /* Utilise la largeur totale pour le centrage */
+    margin-top: -1rem; /* Ajuste la marge au-dessus du bouton */
+    /*margin-bottom: 2rem; /* Ajuste la marge en dessous du bouton, si nécessaire */
+}
+
+.start-button {
+    background-color: #000000; /* Choisir une couleur de fond */
+    color: #ffffff; /* Choisir une couleur de texte */
+    border: 2px solid #000000; /* Choisir une couleur de bordure */
+    padding: 10px 20px; /* Ajuster le rembourrage pour la taille du bouton */
+    font-size: 1.5rem; /* Ajuster la taille de la police */
+    border-radius: 5px; /* Rayon de la bordure pour les coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre optionnelle pour la profondeur */
+    cursor: pointer; /* Curseur de pointeur pour indiquer la fonctionnalité cliquable */
+    transition: background-color 0.3s, color 0.3s; /* Transition pour les interactions hover et click */
+}
+
+.start-button:hover {
+    background-color: #ffffff; /* Couleur de fond au survol */
+    color: #000000; /* Couleur de texte au survol */
+    
+}
+
+.start-button:active {
+    transform: translateY(2px); /* Effet de pression du bouton */
+}
+
