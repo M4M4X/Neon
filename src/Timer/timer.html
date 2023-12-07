@@ -7,29 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="clock-container">
-        <div class="clock-col">
-            <p contenteditable="true" id="clock-day" class="clock-day clock-timer">00</p>
-            <p class="clock-label">Day</p>
-        </div>
-        <div class="clock-col">
-            <p contenteditable="true" id="clock-hours" class="clock-hours clock-timer">00</p>
-            <p class="clock-label">Hours</p>
-        </div>
-        <div class="clock-col">
-            <p contenteditable="true" id="clock-minutes" class="clock-minutes clock-timer">00</p>
-            <p class="clock-label">Minutes</p>
-        </div>
-        <div class="clock-col">
-            <p contenteditable="true" id="clock-seconds" class="clock-seconds clock-timer">00</p>
-            <p class="clock-label">Seconds</p>
+    <div class="page3" id="timer">
+        <div class="page3_2">
+            <div class="clock-container">
+                <div class="clock-col">
+                    <p contenteditable="true" id="clock-day" class="clock-day clock-timer">00</p>
+                    <p class="clock-label">Day</p>
+                </div>
+                <div class="clock-col">
+                    <p contenteditable="true" id="clock-hours" class="clock-hours clock-timer">00</p>
+                    <p class="clock-label">Hours</p>
+                </div>
+                <div class="clock-col">
+                    <p contenteditable="true" id="clock-minutes" class="clock-minutes clock-timer">00</p>
+                    <p class="clock-label">Minutes</p>
+                </div>
+                <div class="clock-col">
+                    <p contenteditable="true" id="clock-seconds" class="clock-seconds clock-timer">00</p>
+                    <p class="clock-label">Seconds</p>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button id="start-timer" class="start-button">Start</button>
+                <button id="stop-timer" class="start-button" >Stop</button>
+            </div>
+            
+            <script src="script.js"></script>
         </div>
     </div>
-    <div class="button-container">
-        <button id="start-timer" class="start-button">Start</button>
-        <button id="stop-timer" class="start-button" >Stop</button>
-    </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
