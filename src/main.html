@@ -264,6 +264,7 @@
 
         });
 
+
         //----------------TIMER---------------------------
 
         let timerInterval; // Variable pour l'intervalle du compte à rebours
@@ -364,6 +365,14 @@
                 //alert('Countdown finished!');
                 setEditable(true);
                 document.getElementById('stop-timer').style.display = 'none';
+
+                //checkbox_status();
+                document.getElementById('switch_on_off').checked = false;
+                
+                var switchState = 0;
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", '/switchState?switchState=' + switchState, true);
+                xhr.send();
             }
         });
 
