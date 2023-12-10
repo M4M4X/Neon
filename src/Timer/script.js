@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let countdownTime = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
 
         // Enregistrer l'heure de fin dans le localStorage
-        var endTime = Date.now() + countdownTime * 1000;
+        var endTime = Date.now() + (countdownTime+1) * 1000; //+1 sinon saute 1s quand on appuie sur start
         localStorage.setItem('endTime', endTime);
 
         updateTimerDisplay(countdownTime);

@@ -309,11 +309,12 @@
                 setEditable(false);
 
                 let countdownTime = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
+                //updateTimerDisplay(countdownTime);
 
-                // Enregistrer l'heure de fin dans le localStorage
-                var endTime = Date.now() + countdownTime * 1000;
+                var endTime = Date.now() + (countdownTime+1) * 1000; //+1 sinon saute 1s quand on appuie sur start
                 localStorage.setItem('endTime', endTime);
 
+                // Mettre à jour l'affichage immédiatement avant de démarrer l'intervalle
                 updateTimerDisplay(countdownTime);
                 timerInterval = setInterval(() => {
                     countdownTime = calculateRemainingTime();
@@ -353,6 +354,7 @@
             }
 
             function updateTimerDisplay(time) {
+
                 let d = Math.floor(time / (24 * 60 * 60));
                 let h = Math.floor((time % (24 * 60 * 60)) / (60 * 60));
                 let m = Math.floor((time % (60 * 60)) / 60);
@@ -366,12 +368,25 @@
 
             function finishCountdown() {
                 clearInterval(timerInterval);
-                //alert('Countdown finished!');
-                setEditable(true);
-                document.getElementById('stop-timer').style.display = 'none';
+
+                if (calculateRemainingTime() <= 0) {
+
+                    resetTimerDisplay();
+
+                    document.getElementById('stop-timer').style.display = 'none';
+
+                    localStorage.removeItem('endTime'); // Supprimer l'heure de fin du localStorage
+
+                    setEditable(true);
+
+                    document.getElementById('switch_on_off').checked = false;
+                }
+
+                //setEditable(true);
+                //document.getElementById('stop-timer').style.display = 'none';
 
                 //checkbox_status();
-                document.getElementById('switch_on_off').checked = false;
+                //document.getElementById('switch_on_off').checked = false;
 
                 /*slider.style.pointerEvents = "none";
                 slider.disabled = true;*/
@@ -421,24 +436,3 @@
     </script>
 </body>
 </html>
-
-function finishCountdown() {
-    clearInterval(timerInterval);
-    //alert('Countdown finished!');
-    setEditable(true);
-    document.getElementById('stop-timer').style.display = 'none';
-
-    //checkbox_status();
-    document.getElementById('switch_on_off').checked = false;
-
-    /*slider.style.pointerEvents = "none";
-    slider.disabled = true;*/
-
-    /*slider.style.pointerEvents = "auto";
-    slider.disabled = false;*/
-    
-    var switchState = 0;
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", '/switchState?switchState=' + switchState, true);
-    xhr.send();
-}
