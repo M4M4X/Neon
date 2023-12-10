@@ -41,10 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let countdownTime = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
 
+        // Enregistrer l'heure de fin dans le localStorage
+        var endTime = Date.now() + countdownTime * 1000;
+        localStorage.setItem('endTime', endTime);
+
         updateTimerDisplay(countdownTime);
         timerInterval = setInterval(() => {
+            countdownTime = calculateRemainingTime();
             if (countdownTime > 0) {
-                countdownTime--;
                 updateTimerDisplay(countdownTime);
             } else {
                 finishCountdown();
@@ -56,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function stopCountdown() {
         clearInterval(timerInterval);
+        localStorage.removeItem('endTime'); // Supprimer l'heure de fin du localStorage
         setEditable(true);
-        /*document.getElementById('stop-timer').style.display = 'none';*/
     }
 
     function resetTimerDisplay() {
@@ -97,4 +101,36 @@ document.addEventListener('DOMContentLoaded', function () {
         setEditable(true);
         document.getElementById('stop-timer').style.display = 'none';
     }
+
+    function calculateRemainingTime() {
+        var endTime = localStorage.getItem('endTime');
+        if (!endTime) {
+            return 0;
+        }
+
+        var currentTime = Date.now();
+        var timeRemaining = endTime - currentTime;
+
+        return Math.max(0, Math.floor(timeRemaining / 1000));
+    }
+
+    // Continuer le décompte en cours si nécessaire
+    function continueCountdown() {
+        let countdownTime = calculateRemainingTime();
+        if (countdownTime > 0) {
+            updateTimerDisplay(countdownTime);
+            timerInterval = setInterval(() => {
+                countdownTime = calculateRemainingTime();
+                if (countdownTime > 0) {
+                    updateTimerDisplay(countdownTime);
+                } else {
+                    finishCountdown();
+                }
+            }, 1000);
+
+            document.getElementById('stop-timer').style.display = 'inline-block';
+        }
+    }
+
+    continueCountdown(); // Appel de cette fonction au chargement de la page
 });

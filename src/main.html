@@ -310,10 +310,14 @@
 
                 let countdownTime = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
 
+                // Enregistrer l'heure de fin dans le localStorage
+                var endTime = Date.now() + countdownTime * 1000;
+                localStorage.setItem('endTime', endTime);
+
                 updateTimerDisplay(countdownTime);
                 timerInterval = setInterval(() => {
+                    countdownTime = calculateRemainingTime();
                     if (countdownTime > 0) {
-                        countdownTime--;
                         updateTimerDisplay(countdownTime);
                     } else {
                         finishCountdown();
@@ -325,8 +329,8 @@
 
             function stopCountdown() {
                 clearInterval(timerInterval);
+                localStorage.removeItem('endTime'); // Supprimer l'heure de fin du localStorage
                 setEditable(true);
-                /*document.getElementById('stop-timer').style.display = 'none';*/
             }
 
             function resetTimerDisplay() {
@@ -380,8 +384,61 @@
                 xhr.open("GET", '/switchState?switchState=' + switchState, true);
                 xhr.send();
             }
+
+            function calculateRemainingTime() {
+                var endTime = localStorage.getItem('endTime');
+                if (!endTime) {
+                    return 0;
+                }
+
+                var currentTime = Date.now();
+                var timeRemaining = endTime - currentTime;
+
+                return Math.max(0, Math.floor(timeRemaining / 1000));
+            }
+
+            // Continuer le décompte en cours si nécessaire
+            function continueCountdown() {
+                let countdownTime = calculateRemainingTime();
+                if (countdownTime > 0) {
+                    updateTimerDisplay(countdownTime);
+                    timerInterval = setInterval(() => {
+                        countdownTime = calculateRemainingTime();
+                        if (countdownTime > 0) {
+                            updateTimerDisplay(countdownTime);
+                        } else {
+                            finishCountdown();
+                        }
+                    }, 1000);
+
+                    document.getElementById('stop-timer').style.display = 'inline-block';
+                }
+            }
+
+            continueCountdown(); // Appel de cette fonction au chargement de la page
         });
 
     </script>
 </body>
 </html>
+
+function finishCountdown() {
+    clearInterval(timerInterval);
+    //alert('Countdown finished!');
+    setEditable(true);
+    document.getElementById('stop-timer').style.display = 'none';
+
+    //checkbox_status();
+    document.getElementById('switch_on_off').checked = false;
+
+    /*slider.style.pointerEvents = "none";
+    slider.disabled = true;*/
+
+    /*slider.style.pointerEvents = "auto";
+    slider.disabled = false;*/
+    
+    var switchState = 0;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/switchState?switchState=' + switchState, true);
+    xhr.send();
+}
